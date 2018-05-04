@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.box{
+			width: 300px;height: 300px;border:1px solid #ccc;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+<script type="text/javascript">
+	
+	var box = document.querySelector('.box');
+	var canvas;
+	var ctx;
+	function drawCanvas(){
+		if(canvas){
+			box.removeChild(canvas);
+		}		
+		canvas = document.createElement('canvas');
+		box.appendChild(canvas);
+		canvas.width = '300';
+		canvas.height = '300';
+		ctx = canvas.getContext('2d');
+		draw();
+		
+	}
+
+	function draw() {
+		ctx.fillRect(0,0,300,300);
+		for (var i = 0; i < 3; i++) {
+		 	for (var j = 0; j < 3; j++) {
+		 		ctx.save();
+		 		ctx.fillStyle = "#09F";
+		 		ctx.translate(25+j*100,25+i*100);
+		 		ctx.fillRect(0,0,50,50);
+		 		ctx.restore();
+		 	}
+		 } 
+	}
+
+	drawCanvas();
+	
+
+
+
+</script>
+</html>

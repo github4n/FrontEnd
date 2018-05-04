@@ -1,0 +1,374 @@
+***金账本小程序：
+                  账号/密码：   xajzb666@163.com   jzb010203  
+ 
+                  appid/secret: wxf2ac99dd85af4497   627e3eb442fe968370eb91cc772354e4
+          
+                  后台：        https://www.mozhifang.cn/xajinzhangben/      admin  jinzhangben029
+
+***慈善家小程序 ：
+               账号/密码：      28393111@qq.com  Aaronlove00mumu
+
+              appid/secret:     wxe9490939073ca535    59e828e9b982aa1c49abe6e5703f6236
+             
+              商户：            1492515122@1492515122  429409
+              
+              api安全密钥：     45HJyyuYYNjiin6698HUIHUhuhfKy87l
+
+
+
+	服务器：39.106.142.188
+
+        root  ciqin029jiafu###
+
+	阿里云帐号：慈亲家服 Aaronlovemumu00    远程连接密码： 888048
+  
+ 	网站域名：ciqinfuwu.com
+ 
+	重新初始化磁盘的登录密码：CIqin123JIAfu888
+     
+
+        宝塔： Bt-Panel: http://39.106.142.188:8888
+			 username: adminz
+			 password: c0a8ce95
+
+        数据库：root aa1f595ca7acf9ac  http://39.106.142.188:888/phpmyadmin_2928c696fae922e3/import.php
+ 
+        FTP:   www wHRHT2TrM7
+
+              
+	
+ 
+
+     	工业和信息化部网站备案系统-短信通知：尊敬的用户张中华，您的ICP备案申请已通过审核，备案/许可证编号为：陕ICP备17021996号，备案密码为：WWW974，审核通过日期：2017-12-05 10:25:27。请牢	记和	妥善保管您的备案号、备案密码，备案密码将是以后变更备案信息的重要依据。
+
+
+
+
+***汽车
+	邮箱：  bojihaojiecar@163.com   baojihaojie
+	小程序：bojihaojiecar@163.com   baojihaojie123 	appid：wxee776eeea53b6ff3  5c9fb60aa2babc0c702228df73460ed9
+	         
+
+***康美工坊
+      
+      邮箱：  2186728@qq.com   Bx#hz@519761109!
+
+      小程序：2186728@qq.com   kangmei029
+
+      appid:  wx13e7614de1d9a092  d3ae2368c20fb3f51171ab3545a9f9ad
+
+      商户平台：1494397032@1494397032  353626    安全密钥：QHUIJhuydinj789653ju76d9lo90t6as
+
+
+
+杠架租赁：
+
+      西安：   
+m13008124242@163.com        hxq123456        appid:  wx7a87d14c89d6e9a3   1e2f06ed65f5f6e622d0b074c9cb6659
+
+      重庆:    
+m13008124242_1@163.com      hxq654321
+
+     关键词： 货架租赁  服装道具租赁 架子租赁  服装  货架  租赁 道具 服装特卖道具租赁 龙门架租赁 单杠租赁   （关键词前加 西安/重庆）
+
+
+
+白皮松客户信息：
+
+       张合 
+  电话：15129213773
+   QQ：595101222@qq.com
+
+      公众号（主体）： 19497148@qq.com    20120928xun
+    
+      祭祖：           337213187@qq.com   19821206jay          appid：wxcc710e99c1962cb7    1d596a300e2541ee388f297d705e414c
+                                          
+      车务通：         chewutong029@126.com      cwt029xian   appid：wxb08df3f971cae48b     27331a63457da1a7b3a103fb30fb2a33    （15129213773）
+
+      白皮松：         baipisongs029@126.com     bpi029xian   appid：wx68e7309063946b3b     f269ef35f3b076de125217cb5ac0d375    （15129213773）
+
+      蓝田同城：       lantiantc029@126.com      lttc029xian  appid：wx008e06295d8df4f7     90c6b33082465429c1704de5d37c60f3 （邮箱注册手机号：15229222465）
+
+     商户平台：1496016242@1496016242  812397   密钥：YUhfei87639ki8serto24fhER7HgDoi8
+
+
+足浴：
+   
+    公众号： xl201801@sina.com   zuyu029..
+   
+    小程序： 105671463@qq.com    zuyu029..          appid: wx2b835a5842645aa7   dbc6fd103174234fc7375b0f10d750a5
+
+    微信商户号：1497567502@1497567502   zuyu02933   api: wui78DU907SYIJLNhd76yncklUY7shy8 
+
+
+寻爱小程序：13379223471   
+    
+          （寻我所爱高端婚恋）      公众号：xunai_gzh@163.com     xunai029..               appid: wx9f88ded50692e2e2
+
+          （寻我所爱高端婚恋交友）  小程序：xunai_xcx@163.com     xunai029..               appid: wx5a353e27bf3fc24f  47418e8e10857b23cd110e4a92717506
+
+          （西安婚恋平台）          小程序：xahlpt_xcx@163.com    xianhunlian029..
+
+          （西安门业平台）          小程序：xamypt_xcx@163.com    xianmenye029..
+
+
+    支付：操作密码：xunai029..   1498747652  sdfgt65r4ebhjDFTYJIL783FGTdf5rjb
+       
+
+链家：
+     远程密码：lianjia029..
+   
+     备案：810577132@qq.com   lianjiahui029
+
+     服务器地址：https://www.cndns.com/   
+        
+           登录账号： l
+ianjia@mail.top  
+lianjia!@#321
+ 
+     宝塔地址：Bt-Panel: http://122.114.177.214:8888
+          username: admin
+          password: 19d30b6c
+
+     小程序：      lian_jia_hui@163.com     lianjia029
+
+      AppID	   wx1cd0dd31828fa6b5       ebd29ad6e73992112338e58c051423be
+				
+
+
+燕窝小程序  	 
+                 AppID： wx994b56aad1993ce0 64afe697c94534f51769a1a1ac8cb516
+				 			
+		 小程序：yyctzqh@sina.com  yyct17791900291
+		 			
+                 商户		账号			1494447562@1494447562
+				密码			980760
+				操作密码		yyct_17791900291
+				api秘钥			qazwsxpkmojnuhbyha1098234hecosqa
+
+
+
+慕尔曼			
+                        公众号邮箱：muerman@163.com     bozhi029
+								
+			公众平台账号	muerman@163.com   muerman029
+			
+			小程序：        muermanxcx@163.com    muerman029
+
+			AppID：         wx18cb5677d48701b1     8cb15db7f2c901b69f29b490517740a9
+						
+			商户号
+				账号			1498332052@1498332052
+				公众号appid		wxeec8c7fae4865317
+				密码			muerman_029
+				操作密码		muerman_029
+				api秘钥			zscdvftghu85d4c8sHAUXDRFRasdcfr7
+
+
+
+
+
+
+视力恢复		
+                        公众号：1032342937@qq.com/george999	
+						
+
+			小程序：       xaslhf@163.com	xaslhf029
+
+				       AppID：wx31e641bc873515df   0c218667bbf29ab7afd211e7200f0613
+				
+			商户号
+				账号			1498621342@1498621342
+				公众号appid		wxeec8c7fae4865317
+				密码			xaslhf029
+				操作密码		xaslhf_029
+				api秘钥			HI9087YTGyukjhgtduyeb769mxgpHU67
+
+
+八马茶叶		
+                        公众号：       bamalaochahui@126.com         bama029..
+	
+			小程序：       bamachahui@163.com            bamachahui029
+
+			AppID：        wx3f3af695b2ae1e7c            98ef100be0a8d50fbc9dc64f2d0aec19
+					
+			商户号
+				账号			1498894832@1498894832
+				公众号appid		wxfbbe21b6a4275a75
+				密码			bama_029
+				操作密码		bama_029
+				api秘钥			zhgr75SFCFTGHOU45242587HSUhdtej1
+
+
+孵化盒子小程序：
+
+              公众号：
+3074517163@qq.com
+      xfmf20170901
+
+              小程序：
+1966295971@qq.com
+      
+xfmf20170901
+
+              appid： wx2874e313571785df     3dc6c4315f62f9fcc0b306eeadbb2151
+
+              商户号：1494269212
+
+              操作密码：xfmf20180302.
+
+              api密钥：xinfengmofang2017090198765432100
+
+
+惠农小程序（基础版商城）别人注册账号：
+
+              小程序：huiminchuangxin001@163.com     密码：ryb196921   
+
+              appid： 
+
+              商户号：
+
+              操作密码：
+
+              api密钥：清源农场 
+
+
+
+清源农场小程序（基础版商城）：
+
+               小程序名称：秦岭生态黑猪
+
+               服务号：3413830040@qq.com    hsf19860704
+
+              小程序：qingyuannc@163.com    qingyuan029..
+
+              appid： wx3eb678cdfcd82815    47a85ccf68df6713014b9fad7c04fff1
+
+              商户号：1497031802
+
+              操作密码：
+
+              api密钥：hsf19860704zhuyuanyuanhuangzeyi1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+《《《《《《《《《《《《---------------------------------------------------------------------------------》》》》》》》》》》》》》》》》》》》》》》
+             
+
+

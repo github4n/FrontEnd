@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<canvas id="canvas" width="300" height="300"></canvas>
+	<canvas id="canvas1" width="300" height="300"></canvas>
+</body>
+<script type="text/javascript">
+	(function(){
+		draw() 
+		var n = 1;
+		var m =  1;
+		function draw() {
+			var canvas = document.getElementById('canvas');
+			if (canvas.getContext){
+				var ctx = canvas.getContext('2d');
+				ctx.clearRect(0, 0, 300, 300);
+				ctx.beginPath();
+				ctx.moveTo(10,50);
+				n++;
+				if(n < 100){
+					ctx.lineTo(10, 100 + n);
+				}else{
+					ctx.lineTo(10, 200);
+				}
+				
+				
+				// ctx.lineTo(110, 100);
+				// ctx.fill();
+				ctx.stroke();
+				
+				
+		  	}
+		  	window.requestAnimationFrame(draw);
+		}
+	})();
+
+	(function(){
+		draw() 
+		var n = 0;
+		var m =  200;
+		function draw() {
+			var canvas = document.getElementById('canvas1');
+			if (canvas.getContext){
+				var ctx = canvas.getContext('2d');
+				ctx.clearRect(0, 0, 300, 300);
+				ctx.beginPath();
+				ctx.moveTo(0, 100);
+				ctx.bezierCurveTo(150, n, 150,m ,300,100);
+
+		
+				if(n < 200 || m > 0){
+					n++;
+					m--;
+				}else{
+					n--;
+					m++;
+					// console.log(n,m)
+				}
+				// ctx.bezierCurveTo(150, 200, 150,0 ,300,100);
+				
+				// ctx.lineTo(110, 100);
+				// ctx.fill();
+				ctx.stroke();
+				
+				
+		  	}
+		  	window.requestAnimationFrame(draw);
+		}
+	})();
+
+	
+</script>
+</html>

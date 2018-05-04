@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		
+		#box{width: 300px;height: 300px;border: 1px solid #ccc;}
+
+
+	</style>
+</head>
+<body>
+	<div id="box">
+		
+	</div>
+</body>
+<script type="text/javascript">
+	
+	var canvasTarget = document.getElementById('box');
+	var canvas;
+	var ctx;
+
+	function drawCanvas() {
+		if(canvas){
+			canvasTarget.removeChild(canvas);
+		}
+		canvas = document.createElement('canvas');
+		canvasTarget.appendChild(canvas);
+		canvas.width = 300;
+		canvas.height = 300;
+		ctx = canvas.getContext('2d');
+
+		draw();
+
+	}
+	function draw() {
+		ctx.save();
+		ctx.fillStyle = "red";
+		ctx.fillRect(0,0,150,150);
+		ctx.translate(100,100);
+		ctx.globalCompositeOperation = 'destination-over';	
+		ctx.save();
+		ctx.fillStyle = "blue";
+		ctx.fillRect(100,100,150,150);
+		ctx.restore();
+		ctx.restore();
+	}
+
+	drawCanvas();
+</script>
+</html>

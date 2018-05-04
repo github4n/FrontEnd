@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../vue.js"></script>
+</head>
+<body>
+	<div class="app1">{{content}}</div>	
+	<div class="app2" v-bind:title="message">123456</div>
+	<div class="app3" v-if="seen === 1">{{message}}</div>
+	<div class="app4">
+		<ul>
+			<li v-for="item in list">{{item.name}}</li>
+		</ul>
+	</div>
+	<div class="app5">
+		<div>{{message}}</div>
+		<button v-on:click = "reverMessage">逆转</button>
+	</div>
+	<div class="app6">
+		<div>{{message}}</div>
+		<input type="text" v-model="message">
+	</div>
+	<ol>
+		<todo-item>12312</todo-item>
+	</ol>
+	<div class="app7">
+		<ol>
+			<todo-item v-for="item in arrays" v-bind:todo = "item" v-bind:key = "item.id"></todo-item>
+		</ol>
+	</div>
+</body>
+<script type="text/javascript">
+	
+	var app = new Vue({
+		el : ".app1",
+		data:{
+			content:"Hello Vue"
+		}
+	})
+
+	var app = new Vue({
+		el : ".app2",
+		data : {
+			message : '页面加载于' + new Date().toLocaleString()
+		}
+	})
+
+	var app = new Vue({
+		el : '.app3',
+		data : {
+			seen : 1,
+			message : '嘟嘟嘟'
+		}
+	})
+
+	var app = new Vue({
+		el : '.app4',
+		data : {
+			list : [{
+				name : '123'
+			},{
+				name : '654'
+			}]
+		}
+	})
+
+	var app = new Vue({
+		el : '.app5',
+		data : {
+			message : 'Hello,Vue?'
+		},
+		methods:{
+			reverMessage : function () {
+				/* body... */
+				this.message = this.message.split(',').reverse().join('|');
+			}
+		}
+	})
+
+	var app = new Vue({
+		el : ".app6",
+		data : {
+			message : '123'
+		}
+	})
+
+	Vue.component('todo-item', {
+		props : ['todo'],
+  		template: '<li>{{todo.text}}</li>'
+	})
+
+	var app = new Vue({
+		el : '.app7',
+		data : {
+			arrays :[{
+				id : 1,
+				text: '箱子'
+			},{
+				id : 2,
+				text: '箱子'
+			}]
+		}
+	})
+</script>
+</html>

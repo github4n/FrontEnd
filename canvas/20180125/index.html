@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<canvas id="img" width="300" height="300" style="border: 1px solid #ccc;"></canvas>
+</body>
+<script type="text/javascript">
+	
+	var sun = new Image();
+	var moon = new Image();
+	var earth = new Image();
+  	sun.src = 'https://mdn.mozillademos.org/files/1456/Canvas_sun.png';
+	moon.src = 'https://mdn.mozillademos.org/files/1443/Canvas_moon.png';
+	earth.src = 'https://mdn.mozillademos.org/files/1429/Canvas_earth.png';
+
+	var img = document.getElementById('img');
+	function draw(){
+		var ctx = img.getContext('2d');
+		// ctx.save();
+		// ctx.translate(150,150);
+		// ctx.translate(105,0);
+		// earth.onload = function(){
+		// 	ctx.drawImage(earth,-12,-12);
+		// }
+		// ctx.save();
+		// ctx.restore();
+		// sun.onload = function(){
+		// 	ctx.drawImage(sun,0,0,300,300);
+		// }
+		ctx.save();
+		// ctx.fillStyle = "green";
+		ctx.fillRect(10, 10, 100, 100);
+		ctx.restore();
+		ctx.fillRect(150, 75, 100, 100);
+	}
+	draw();
+
+
+
+</script>
+</html>

@@ -1,0 +1,10 @@
+Node.js Buffer缓冲区
+javascript语言自身只有字符串数据类型，没有二进制数据类型
+但在处理数据的时候，必须使用二进制数据
+
+创建Buffer类
+Buffer.alloc(size[,fill[,encoding]]) 返回一个指定大小的Buffer实例，如果没有设置fill，默认为0
+Buffer.allocUnsafe(size):返回一个指定大小的Buffer实例
+Buffer.allocUnsafeSlow(size)
+Buffer.from(array)返回一个被array的值初始化的新的Buffer实例
+Buffer.from

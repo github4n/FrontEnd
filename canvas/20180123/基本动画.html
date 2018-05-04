@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<canvas id="canvas" width="300" height="300"></canvas>
+</body>
+<script type="text/javascript">
+	//动画的步骤
+	//1.清空canvas
+	//2.保存canvas状态
+	//3.绘制动画图形
+	//4.恢复canvas状态
+	
+	//太阳系的动画
+	// var time = new Date();
+	// console.log( ((2*Math.PI)/60)*time.getSeconds() + ((2*Math.PI)/60000)*time.getMilliseconds());
+	var sun = new Image();
+	var moon = new Image();
+	var earth = new Image();
+	function init (argument) {
+  		sun.src = 'https://mdn.mozillademos.org/files/1456/Canvas_sun.png';
+		moon.src = 'https://mdn.mozillademos.org/files/1443/Canvas_moon.png';
+		earth.src = 'https://mdn.mozillademos.org/files/1429/Canvas_earth.png';
+		window.requestAnimationFrame(draw);
+	}
+
+	function draw (argument) {
+		var ctx = document.getElementById('canvas').getContext('2d');
+		//之前的把之后的覆盖掉
+		ctx.globalCompositeOperation = 'destination-over';
+		//混合模式
+		ctx.clearRect(0,0,300,300);
+
+		ctx.fillStyle = "rgba(0,0,0,0.4)";
+		//填充
+		ctx.strokeStyle = "rgba(0,153,255,0.4)"
+		//描边
+		ctx.save();
+		//将当前状态推送到堆栈来保存画布的整个状态
+		ctx.translate(150,150);
+
+		// Earth
+		var time = new Date();
+		ctx.rotate( ((2*Math.PI)/60)*time.getSeconds() + ((2*Math.PI)/60000)*time.getMilliseconds() );
+		ctx.translate(105,0);
+		ctx.fillRect(0,-12,50,24); // Shadow
+		ctx.drawImage(earth,-12,-12);
+
+		// Moon
+		ctx.save();
+		ctx.rotate( ((2*Math.PI)/6)*time.getSeconds() + ((2*Math.PI)/6000)*time.getMilliseconds() );
+		ctx.translate(0,28.5);
+		ctx.drawImage(moon,-3.5,-3.5);
+		ctx.restore();
+
+		ctx.restore();
+		  
+		ctx.beginPath();
+		ctx.arc(150,150,105,0,Math.PI*2,false); // Earth orbit
+		ctx.stroke();
+		 
+		ctx.drawImage(sun,0,0,300,300);
+
+		window.requestAnimationFrame(draw);
+	}
+	init();
+</script>
+</html>
