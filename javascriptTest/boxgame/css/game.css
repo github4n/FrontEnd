@@ -1,0 +1,77 @@
+/* game.css */
+.wrap{border: 0.1rem solid green;box-sizing: border-box;width: 100%;background-color: #ccc;overflow: hidden;}
+	.game-time{position: absolute;font-size: 0.4rem;top: 0.05rem;left: 0.1rem;}
+	.game-num{position: absolute;font-size: 0.4rem;top: 0.05rem;left: 2rem;}
+	.door{width: 5rem;height: 2rem;background-color: green;margin: 0.5rem auto;opacity: 0.5;}
+	.con{border: 1px solid #000;box-sizing: border-box;width: 5rem;height: 9rem;background-color: #fff;margin: 0.5rem auto;position: relative;}
+		.door-on-person{width: 1.66rem;height: 1rem;background-color: blue;position: absolute;top:0;left:1.66rem;}
+		.box{width: 1rem;height: 1rem;background-color: #ccc;border-radius: 50%;position: absolute;top: 0;left: 0;transform: translate(2rem,7rem);}
+		/* 足球归为 */
+		.box.original{animation-fill-mode: none;}
+		
+	.leftAnimout{animation:leftanimout .4s ease .5s forwards}
+	.leftAnimin{animation:leftanimin .8s ease .5s forwards}
+
+	.middleAnimout{animation:middleanimout .4s ease .5s forwards}
+	.middleAnimin{animation:middleanimin .8s ease .5s forwards}
+
+	.rightAnimout{animation:rightanimout .4s ease .5s forwards}
+	.rightAnimin{animation:rightanimin .8s ease .5s forwards}
+
+	 	@keyframes leftanimout{
+			0%{transform: translate(2rem,7rem);}
+			100%{transform: translate(0.5rem,0rem);}
+		}
+		@keyframes leftanimin{
+			0%{transform: translate(2rem,7rem);}
+			40%{transform: translate(0.5rem,-2.5rem);}
+			100%{transform: translate(0rem,-2rem);}
+		}
+
+		@keyframes middleanimout{
+			0%{transform: translate(2rem,7rem);}
+			100%{transform: translate(2rem,0rem);}
+		}
+		@keyframes middleanimin{
+			0%{transform: translate(2rem,7rem);}
+			40%{transform: translate(2rem,-2.5rem);}
+			100%{transform: translate(2rem,-1.7rem);}
+		}
+ 	
+
+ 		@keyframes rightanimout{
+			0%{transform: translate(2rem,7rem);}
+			100%{transform: translate(3.5rem,0rem);}
+		}
+		@keyframes rightanimin{
+			0%{transform: translate(2rem,7rem);}
+			40%{transform: translate(4rem,-2.5rem);}
+			100%{transform: translate(3.3rem,-2.2rem);}
+		}
+
+		/* 倒计时动画 */
+		@keyframes upHide{
+			0%{opacity: 1;transform:translate(-50%,-50%) scale(1,1);}
+			100%{opacity: 0;transform:translate(-50%,-50%) scale(1.4,1.4);}
+		}
+		.upHide1.on{animation:upHide .2s ease 0.5s forwards;}
+		.upHide2.on{animation:upHide .2s ease 1.5s forwards;}
+		.upHide3.on{animation:upHide .2s ease 2.5s forwards;}
+		.upHide4.on{animation:upHide .2s ease 3.5s forwards;}
+		.upHide5.on{animation:upHide .2s ease 4.5s forwards;}
+		.upHide1{z-index: 7;}
+		.upHide2{z-index: 6;}
+		.upHide3{z-index: 5;}
+		.upHide4{z-index: 4;}
+		.upHide5{z-index: 3;}
+ 
+ /* 弹出层 */
+ .pop-bg{width: 100%;height: 100%;background-color: rgba(0, 0, 0, .5);position: absolute;top: 0;left: 0;}
+ 	.pop-num{position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);font-size: 0.5rem;font-weight: bold;width: 2rem;height: 1rem;background-color: #fff;border-radius: 0.1rem;text-align: center;line-height: 1rem;}
+ 	.pop-con{position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);font-size: 0.5rem;box-sizing: border-box;padding: 0.2rem;background-color: #fff;border-radius: 0.1rem;z-index: 2;width: 5rem;}
+ 	.pop-info{position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);font-size: 0.5rem;font-weight: bold;height: 1rem;background-color: #fff;border-radius: 0.1rem;text-align: center;line-height: 1rem;padding:0 0.4rem;}
+ 	.rank,.time,.info01,.info02{display: none;}
+ 	.rank.on,.time.on{display: block;}
+ 			.pop-tit{font-weight: bold;font-size: 0.5rem;text-align: center;display: block;}
+ 			.btn-in{width: 1.5rem;height: 0.9rem;border-radius: 0.05rem;border:1px solid #ccc;color: #333;font-size: 0.3rem;text-align: center;line-height: 0.9rem;margin: 0.1rem auto;}
+ 	
