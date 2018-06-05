@@ -51,51 +51,108 @@
 		$('.wrap').css({'height' : h + 'rem'});
 
 		var box_num = 0;//点球的次数
+		var box_num_arr = [{action:false,success:false},{action:false,success:false},{action:false,success:false},{action:false,success:false},{action:false,success:false}];//用来存储每次点球是否操作成功 操作成功将对应的值action变为true,点球成功success变为true
+		var classname = '';//当点球身份时，触发点球事件所获取的classname属性值
 		var door_num = 0;//守球的次数
+		var box_in_num = 0;//进球次数
 		var flag_rank = true;//判断是守门还是点球 true为点球 false为守门
 		var flag_game = false;//判断游戏计时开始还是结束 true为开始 false为结束
 
 		//身份为点球员进入游戏事件
 		$('.in-box').on('click',function() {
 			$('.rank').removeClass('on');
+			countPop();
+		})
+
+		//倒计时弹窗
+		function countPop() {
 			$('.time').addClass('on');
 			$('.pop-num').addClass('on');
 			setTimeout(function () {
 				$('.time').removeClass('on');
+				$('.pop-num').removeClass('on');
 				//开始计时
 				countdown();
-				flag_game = true;
-				boxMove(flag_game)
-			},5000)
-		})
+			},5000);
+		}
 
-		//10秒倒计时
-		function countdown() { 
-			var times = 10;//初始化计数器
-			$('.game-time span').text(times);//在页面中显示10秒
-	        var timer=setInterval(function (){//定义匿名函数，
+		function countdown(){ 
+			var times = 3;  //初始化计数器
+			$('.game-time span').text(times);  //在页面中显示10秒
+	        var timer = setInterval(function (){   //定义匿名函数
 	            times--;
-	            console.log(times);
-	            $('.game-time span').text(times);//在页面中显示减一后的秒数
-	            if(times == 0){//当num变为1的时候，通过 clearInterval()结束倒计时
+	            // flag_game = true;
+	            $('.game-time span').text(times);  //在页面中显示减一后的秒数
+	            if(times == 0){
 	                clearInterval(timer);
-	                $('.box').addClass('original').removeClass('leftAnimin');
-	                flag_game = false;
-	                $('.game-num span').text(box_num);
+	                $('.box').addClass('original').removeClass(classname);
+	                console.log(classname);
+	                if(flag_rank){
+	                	box_num = box_num + 1;//每次倒计时结束box_num自加一次
+		                // $('.game-num span').text(box_num);
+		                flag_game = false;
+		                if(box_num <= 5){
+			                countPop();	                	
+		                }else{
+		                	console.log('点球完成');
+		                	flag_game = true;
+		                }
+		                switch (box_num){
+		                	case 1:
+		                		if(classname!=''){
+		                			console.log('踢球了');
+		                		}else {
+		                			console.log('未踢球');
+		                		}
+		                		break;
+		                	case 2:
+		                		if(classname!=''){
+		                			console.log('踢球了');
+		                		}else {
+		                			console.log('未踢球');
+		                		}
+		                		break;
+		                	case 3:
+		                		if(classname!=''){
+		                			console.log('踢球了');
+		                		}else {
+		                			console.log('未踢球');
+		                		}
+		                		break;
+		                	case 4:
+		                		if(classname!=''){
+		                			console.log('踢球了');
+		                		}else {
+		                			console.log('未踢球');
+		                		}
+		                		break;
+		                	case 5:
+		                		if(classname!=''){
+		                			console.log('踢球了');
+		                		}else {
+		                			console.log('未踢球');
+		                		}
+		                		break;
+		                	default:
+		                		break;
+		                }	
+	                }
+
 	            }
 	        },1000);
 		}
-		function boxMove(flag_game) {
-			if(flag_game){
-				$('#ball').on('click',function(){
-					$(this).addClass('leftAnimin').removeClass('original');
-					box_num = box_num + 1;
-					flag_game = false;
-					console.log('111')
-				})		
-			}			
-		}
 
+
+		$('#ball').on('click',function(){
+			if(!flag_game){
+				classname = 'leftAnimin';
+				$(this).addClass(classname).removeClass('original');
+				flag_game = true;
+				console.log('11');
+			}else{
+				console.log('22');
+			}
+		})		
 	})
 	
 

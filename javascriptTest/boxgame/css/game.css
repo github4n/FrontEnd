@@ -6,7 +6,7 @@
 	.con{border: 1px solid #000;box-sizing: border-box;width: 5rem;height: 9rem;background-color: #fff;margin: 0.5rem auto;position: relative;}
 		.door-on-person{width: 1.66rem;height: 1rem;background-color: blue;position: absolute;top:0;left:1.66rem;}
 		.box{width: 1rem;height: 1rem;background-color: #ccc;border-radius: 50%;position: absolute;top: 0;left: 0;transform: translate(2rem,7rem);}
-		/* 足球归为 */
+		/* 足球归位 */
 		.box.original{animation-fill-mode: none;}
 		
 	.leftAnimout{animation:leftanimout .4s ease .5s forwards}
