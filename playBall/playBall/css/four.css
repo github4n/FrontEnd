@@ -1,0 +1,136 @@
+*{
+				margin: 0;
+				padding: 0;
+			}
+			
+
+html{
+	width: 100%;
+	height: 100%;
+}
+body{
+	text-align: center;
+				-webkit-user-select: none;
+				width: 100%;
+				height: 100%;
+				box-sizing: border-box;
+	overflow: hidden;
+}
+	
+@keyframes rotate
+{
+0% {transform: rotate(0deg);}
+      100% {transform: rotate(-360deg);}
+}
+ 
+@-webkit-keyframes rotate /* Safari 与 Chrome */
+{
+   0% {transform: rotate(0deg);}
+      100% {transform: rotate(-360deg);}
+}
+
+
+/*bg sm*/
+@keyframes scale
+{
+0% {transform: scale(.9);}
+      100% {transform: scale(1);}
+}
+ 
+@-webkit-keyframes rotate /* Safari 与 Chrome */
+{
+0% {transform: scale(.9);}
+      100% {transform: scale(1);}
+}
+
+
+.music{
+	    width:.24rem;
+height:.24rem;
+    position: absolute;
+    right: .26rem;
+    top: .26rem;
+	border-radius:50%;
+	animation: rotate 1s linear 1s infinite;
+    /* Safari 与 Chrome: */
+    -webkit-animation: rotate 1s linear 1s infinite;
+    border: 1px solid #fff;
+    z-index: 5;
+}
+.music img{
+	width: 100%;
+	height: 100%;
+}
+
+/*second*/
+
+.swiper-slide {
+	width: 100%;
+    height: 100%;
+		position: relative;
+}
+.swiper-slide  .rules{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+    height: 100%;
+    background: #33ca92;
+}
+.swiper-slide  .rules .rule_bg{
+	position: absolute;
+	left: 0;
+	top: .35rem;
+	width: 100%;
+    
+}
+.swiper-slide  .center{
+	margin: 1.3rem auto;
+	    width: 3.2rem;
+}
+.swiper-slide  .center .font{
+	width: 100%;
+	text-align: center;
+	font-size: .15rem;
+	color: #fff;
+	margin-bottom: .5rem;
+}
+.swiper-slide  .center form .form-list{
+	width: 2.7rem;
+    height: .45rem;
+    margin: .15rem auto;
+    border-radius:6px;
+    background: #fff;
+}
+.swiper-slide  .center form .form-list .list-name{
+	width: 30%;
+	height: 100%;
+	float: left;
+	font-size:.14rem;
+font-family:PingFang-SC-Regular;
+color:rgba(27,148,89,1);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.swiper-slide  .center form .form-list input{
+	width: 70%;
+	height: 100%;
+	float: right;
+	border-radius:6px;
+}
+.swiper-slide  .center form .form-list img{
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.swiper-slide  .rules .center .biaoti{
+	margin: 0 auto;
+	width: 1.48rem;
+	height: .22rem;
+}
+.swiper-slide  .center form .button{
+	width: 1.36rem;
+	height: .5rem;
+}

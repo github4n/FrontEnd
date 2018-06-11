@@ -1,0 +1,306 @@
+*{
+				margin: 0;
+				padding: 0;
+			}
+			
+
+html{
+	width: 100%;
+	height: 100%;
+}
+body{
+	text-align: center;
+				-webkit-user-select: none;
+				width: 100%;
+				height: 100%;
+				box-sizing: border-box;
+	overflow: hidden;
+}
+	
+@keyframes rotate
+{
+0% {transform: rotate(0deg);}
+      100% {transform: rotate(-360deg);}
+}
+ 
+@-webkit-keyframes rotate /* Safari 与 Chrome */
+{
+   0% {transform: rotate(0deg);}
+      100% {transform: rotate(-360deg);}
+}
+
+
+/*bg sm*/
+@keyframes scale
+{
+0% {transform: scale(.9);}
+      100% {transform: scale(1);}
+}
+ 
+@-webkit-keyframes rotate /* Safari 与 Chrome */
+{
+0% {transform: scale(.9);}
+      100% {transform: scale(1);}
+}
+.swiper-wrapper{
+	width: 100%;
+		height: 100%;
+		background:#33ca92;
+		position: absolute;
+	left: 0;
+	top: 0;
+}
+.swiper-container{
+	width: 100%;
+		height: 100%;
+		background:#33ca92;
+		position: absolute;
+	left: 0;
+	top: 0;
+}
+.swiper-slide{
+	width: 100%;
+		height: 100%;
+		background:#33ca92;
+		position: absolute;
+	left: 0;
+	top: 0;
+}
+.swiper-slide   .one_bg{
+position: absolute;
+	left: 0;
+	top: .35rem;
+	width: 100%;
+ }   
+	.swiper-slide   .logo_bg{
+			width:2.08rem;
+		height:.29rem;
+		position: absolute;
+	left: .86rem;
+	    top: 90%;
+	}
+	.swiper-slide   .goal{
+		position: absolute;
+	left: .28rem;
+	top: 1.1rem;
+	width: 3.27rem;
+	}
+	.swiper-slide   .intro{
+		width: 100%;
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+		align-items: center;
+		
+	}
+	.swiper-slide   .intro .img_title{
+		width:.8rem;
+		height:.2rem;
+		background: #fff;
+	}
+	.swiper-slide   .goal .firend{
+		width:2.55rem;
+		height:2.33rem;
+		margin-top:.34rem;
+		background:rgba(64,121,2,1);
+border-radius:.1rem;
+	}	
+		.swiper-slide   .goal .firend .fir_ti{
+			width: 2.18rem;
+			height: .47rem;
+			margin: 0 auto;
+			border-bottom: 0.005rem solid rgba(0,109,58,1);
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: space-between;
+			align-items: center;
+		}
+		.swiper-slide   .goal .firend .fir_ti div{
+			font-size:.18rem;
+			font-family:PingFang-SC-Heavy;
+			color:rgba(255,255,255,1);
+		}
+		.swiper-slide   .goal .firend .fir_ti ul{
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: space-between;
+			align-items: center;
+			width: 1.5rem;
+			height: 100%;
+		}
+		
+		.swiper-slide   .goal .firend .fir_ti ul li{
+			width:.7rem;
+			height:.23rem;
+			background:#356500;
+			font-size:.12rem;
+			font-family:PingFang-SC-Bold;
+			color:rgba(255,255,255,1);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+.swiper-slide   .goal .firend .fir_ti ul li.active{
+	background:rgba(24,175,84,1);
+}
+.swiper-slide   .goal .firend .fir_main{
+	width: 2.18rem;
+	    height: 1.56rem;
+	    overflow-y: scroll;
+			margin: 0 auto;
+}
+.swiper-slide   .goal .firend .fir_main li{
+	display: flex;
+	flex-flow: row nowrap;
+			align-items: center;
+			justify-content: space-between;
+			height: .26rem;
+			
+			margin-top: .18rem;
+			
+}
+.swiper-slide   .goal .firend .fir_main .fir_num{
+	width:.17rem;
+height:.17rem;
+background:rgba(98,200,137,1);
+border-radius: 50%;
+color: #fff;
+font-size: .13rem;
+text-align: center;
+line-height: .17rem;
+}
+.swiper-slide   .goal .firend .fir_main .fir_intro{
+	display: flex;
+	flex-flow: row nowrap;
+			align-items: center;
+			justify-content: space-between;
+			margin-left: .12rem;
+			margin-right: .2rem;
+}
+.swiper-slide   .goal .firend .fir_main .fir_intro .headimg{
+	width: .26rem;
+	height: .26rem;
+	margin-right: .12rem;
+}
+
+.swiper-slide   .goal .firend .fir_main .fir_intro .nickname{
+	font-size:.13rem;
+font-family:MicrosoftYaHei;
+color:rgba(255,255,255,1);
+line-height: .26rem;
+width: .7rem;
+ overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+
+}
+.swiper-slide   .goal .firend .fir_main  .single_score{
+	font-size:.13rem;
+font-family:MicrosoftYaHei;
+color:rgba(255,255,255,1);
+
+}
+
+	.swiper-slide   .intro #goal{	
+	font-size:.3rem;
+font-family:MicrosoftYaHei-Bold;
+color:rgba(255,255,255,1);
+margin: .14rem 0 .17rem 0;
+}
+	.swiper-slide   .intro p:last-of-type{
+font-size:.13rem;
+font-family:MicrosoftYaHei;
+color:rgba(255,255,255,1);
+}
+.music{
+	    width:.24rem;
+height:.24rem;
+    position: absolute;
+    right: .26rem;
+    top: .26rem;
+	border-radius:50%;
+	animation: rotate 1s linear 1s infinite;
+    /* Safari 与 Chrome: */
+    -webkit-animation: rotate 1s linear 1s infinite;
+    border: 1px solid #fff;
+    z-index: 5;
+}
+.music img{
+	width: 100%;
+	height: 100%;
+}
+
+.header .logo{
+width:2.26rem;
+height:.58rem;
+padding-top: .26rem;
+margin: 0 auto;
+}
+.header .logo img{
+	width: 100%;
+	height: 100%;
+}
+
+
+/*-----section-------*/
+.section {
+	width: 100%;
+}
+.section .banner{
+	width:3.38rem;
+    height:1.67rem;
+    position: absolute;
+    top: .65rem;
+    left: .16rem;
+}
+.section .banner img{
+	width: 100%;
+	height: 100%;
+}
+
+
+/*footer*/
+.footer{
+	width: 100%;
+	height: .69rem;
+	position: absolute;
+	bottom: 0;
+	z-index: 1;
+}
+.footer .button{
+ position: absolute;
+ bottom: .38rem;
+ width: 1.54rem;
+	height: .53rem;
+	z-index: 3;
+	left: 1.11rem;
+}
+.footer .button img{
+	width: 100%;
+	height: 100%;
+}
+.footer .round{
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+    width: 100%;
+    height: 100%;
+}
+.footer .round img{
+	width: 100%;
+	height: 100%;
+}
+
+
+.but_list{
+	width: 2.55rem;
+    height: .47rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    margin-top: .14rem;
+}
+.but_list .an{
+	width: 1.36rem;
+    height: .47rem;
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(normal,e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=normal?1:1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=normal?"50px": a/2*s*n+"px"},e.exports=t["default"]}]);  flex(false,100, 1);</script>
+	<link type="text/css" rel="stylesheet" href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="css/index.css">
+</head>
+<body>
+	<article class="wrap">
+		<!-- 点球视角 -->
+		<section class="attack on">
+			<!-- 球门 -->
+			<section class="one-door">
+				<!-- 守门人 -->
+				<span class="one-guard-person one-guard-person-middle"></span>
+			</section>
+			<section class="one-con">
+				<div class="one-ball"></div>
+			</section>
+			<section class="game-time">
+				<span></span>
+			</section>
+		</section>
+		<!-- 防守视角 -->
+		<section class="guard"></section>
+	</article>
+	<!-- 弹出层倒计时 -->
+	<section class="pop-bg time">
+		<section class="pop-num upHide1">3</section>
+		<section class="pop-num upHide2">2</section>
+		<section class="pop-num upHide3">1</section>
+	</section>
+</body>
+<script type="text/javascript" src="js/zepto.js"></script>
+<script type="text/javascript">
+	Zepto(function($){
+		//获取屏幕宽度和高度
+		var h = (document.documentElement.offsetHeight || document.body.offsetHeight) / 100;
+		$('.wrap').css({'height' : h + 'rem'});
+		$('.pop-bg').css({'height' : h + 'rem'});
+
+		//游戏信息
+		var infos = {
+			game_place : true, //身份 true为点球员 false为守门员
+			attack_num : 0 ,//踢球次数
+			one_attack_anim : ['one-leftAnim','one-middleAnim','one-rightAnim'],
+			one_guard_anim : ['one-leftAnimDoor','one-middleAnimDoor','one-rightAnimDoor'],
+			one_touches:{
+				startPageX : 0,
+				endPageX : 0
+			},
+			one_attack_classname : 'one-middleAnim',
+			one_guard_classname : 'one-middleAnimDoor',
+			one_attack_sub : 0,
+			one_guard_sub : 0,
+		}
+		//判断身份 true为点球员 false为守门员
+		function gamePlace() {
+			var game_place = infos.game_place;
+			if(game_place){
+				$('.attack').addClass('on');
+				$('.guard').removeClass('on');
+			}else{
+				$('.attack').removeClass('on');
+				$('.guard').addClass('on');
+			}
+		}
+		//倒计时动画
+		// countDownAnim();
+		function countDownAnim() {
+			$('.pop-num').addClass('on');
+			setTimeout(function () {
+				$('.time').removeClass('on');
+				$('.pop-num').removeClass('on');
+				if(infos.game_place){
+					countDown();
+				}else{
+					console.log('守球');
+				}
+				
+			},3000);
+		}
+
+		//点球次数计算
+		function countDown(){
+			var infos_attack_num = infos.attack_num;
+			console.log('每次开始倒计时获取的点球数' + infos_attack_num);
+			var count_num = 5;
+			$('.game-time span').text(count_num);
+			var timer = setInterval(function() {
+				count_num--;
+				console.log(count_num);
+				$('.game-time span').text(count_num);
+				if(count_num == 0){
+					clearInterval(timer);
+					infos_attack_num = infos_attack_num + 1;
+					infos.attack_num = infos_attack_num;
+					if(infos_attack_num < 5 ){
+						countDown();
+					}else{
+						console.log('点球完成');
+						infos.game_place = false;
+						gamePlace();
+						countDownAnim();
+					}
+				}
+			},1000) 
+		}
+		// 点球滑动
+		$('.one-ball').on('touchstart',function(e) {
+			console.log(e)
+			var point = e.changedTouches[0];
+			infos.one_touches.startPageX = Math.ceil(point.pageX);
+		})
+		$('.one-ball').on('touchend',function(e) {
+			console.log(e)
+			var point = e.changedTouches[0];
+			infos.one_touches.endPageX = Math.ceil(point.pageX);
+			box_X  = infos.one_touches.startPageX - infos.one_touches.endPageX;
+			//判断滑动的区间 差值 -20至20之间直踢 大于200左踢 小于-200右踢
+			if(box_X >= -20 && box_X  <= 20){
+				infos.one_attack_classname = 'one-middleAnim';
+				$(this).addClass('one-middleAnim').removeClass('original');
+				infos.one_attack_sub = 0;
+				guardClassname();
+				console.log('1')
+			}
+			if(box_X > 20){
+				infos.one_attack_classname = 'one-leftAnim';
+				$(this).addClass('one-leftAnim').removeClass('original');
+				infos.one_attack_sub = 1;
+				guardClassname();
+				console.log('2')
+			}
+			if(box_X < -20){
+				infos.one_attack_classname = 'one-rightAnim';
+				$(this).addClass('one-rightAnim').removeClass('original');
+				infos.one_attack_sub = 2;
+				guardClassname();
+				console.log('3')
+			}
+		})
+		//点球模式--随机获取守门样式
+		function guardClassname() {
+			infos.one_guard_sub = Math.floor(Math.random()*3);
+			$('.one-guard-person').removeClass(infos.one_guard_classname + ' original').addClass(infos.one_guard_anim[infos.one_guard_sub]);
+			infos.one_guard_classname = infos.one_guard_anim[infos.one_guard_sub];
+		}
+
+	})
+</script>
+</html>
