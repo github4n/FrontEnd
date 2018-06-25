@@ -5,13 +5,167 @@
 	<title>Document</title>
 	<meta name="screen-orientation" content="portrait">
 	<meta name="x5-orientation" content="portrait">
+<!-- 	<link type="text/css" rel="stylesheet" href="http://127.0.0.1:8888/css/style.css">
+    <link type="text/css" rel="stylesheet" href="http://127.0.0.1:8888/css/index.css"> -->
+
 	<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(normal,e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=normal?1:1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=normal?"50px": a/2*s*n+"px"},e.exports=t["default"]}]);  flex(false,100, 1);</script>
-	<link type="text/css" rel="stylesheet" href="css/style.css">
-    <link type="text/css" rel="stylesheet" href="css/index.css">
+	<style type="text/css">
+		body{font-size:14px;background-color:#fff;}
+		/*reset*/
+		body,div,p,ul,li,table,tbody,tr,td,textarea,form,input,h1,h2,h3,h4,h5,dl,dt,dd,img,iframe,header,nav,section,article,footer,figure,figcaption,menu{margin:0;padding:0;}
+		body{font-family:"\5FAE\8F6F\96C5\9ED1",Helvetica;-webkit-user-select:none;width:100%;height:100%;-webkit-display:box;-webkit-box-orient:vertical;-webkit-user-select:none;}
+		header,nav,section,article,footer,figure,figcaption{display:block;}
+		ol,ul{margin:0;padding:0;list-style:none;}
+		fieldset{border:none;margin:0;padding:0;}
+		a,li,ul,[onclick]{-webkit-tap-highlight-color:none;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+		table{border-collapse:collapse;border-spacing:0;}
+		em,strong{font-weight:normal;font-style:normal;}
+		a{text-decoration:none;}
+		img{display:block;}
+		input{border-width: 0;border-style: none;}
+		button{padding: 0;border-width: 0;display: block;}
+		html,body{height: 100%;width: 100%;position: fixed;top: 0;left: 0;}
+.wrap{position: relative;box-sizing: border-box;width: 100%;height:100%;background-color: #ccc;overflow: hidden;border: 0.1rem solid green;}
+	.attack,.guard{width: 100%;height: 12rem;background-color: #98d784;display: none;overflow: hidden;}
+	.attack.on,.guard.on{display: block;}
+	.game-time{position: absolute;font-size: 0.4rem;top: 0.05rem;left: 0.1rem;}
+	/* 点球视角主要样式 */
+	.one-door{width: 5rem;height: 3rem;margin: 0.5rem auto;background-color: #f4f7f3;position: relative;}
+		.one-guard-person{width: 1.67rem;height: 2rem;position: absolute;bottom:-1rem;}
+		.one-guard-person-left{background-color: #fcc877;left: 0;}
+		.one-guard-person-middle{background-color: #b08c54;left: 1.67rem;}
+		.one-guard-person-right{background-color: #624e30;left: 3.34rem;}
+	.one-con{height: 8rem;width: 6rem;margin:0 auto;background-color: #f4f7f3;position: relative;}
+		.one-ball{position: absolute;left:2.3rem;bottom: 0.4rem;background: url('../img/box.png') no-repeat;width: 1.65rem;height: 1.5rem;background-size:100%;transform: translate(0rem,0rem);}
+	.one-ball-data,.two-ball-data{position: absolute;bottom: -0.2rem;left: 50%;transform: translate(-50%,-50%);height: 0.5rem;width: 4.7rem;}
+		.one-balls,.two-balls{width: 0.5rem;height: 0.5rem;border-radius: 50%;background-color: #ccc;display: inline-block;margin:0 0.2rem;}
+		.one-balls.on,.two-balls.on{background-color: #215d10;}
+	/*守球视角主要样式*/
+	.two-con{height: 8rem;width: 6rem;margin:0 auto;background-color: #f4f7f3;position: relative;}
+		.two-ball{position: absolute;left:2.3rem;top: 0.4rem;background: url('../img/box.png') no-repeat;width: 1.65rem;height: 1.5rem;background-size:100%;transform: translate(0rem,0rem);}
+	.two-door{width: 5rem;height: 3rem;margin: 0.3rem auto;background-color: #f4f7f3;position: relative;}
+		.two-guard-person{width: 1.67rem;height: 2rem;position: absolute;top:-1rem;}
+		.two-guard-person-left{background-color: #fcc877;left: 0;}
+		.two-guard-person-middle{background-color: #b08c54;left: 1.67rem;}
+		.two-guard-person-right{background-color: #624e30;left: 3.34rem;}
+
+ /* 弹出层 */
+ .pop-bg{width: 100%;height: 100%;background-color: rgba(0, 0, 0,.5);position: absolute;top: 0;left: 0;z-index: 99;}
+ 	.time{display: none;}
+ 	.time.on{display: block;}
+ 	.pop-num{position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);font-size: 0.5rem;font-weight: bold;width: 2rem;height: 1rem;background-color: #fff;border-radius: 0.1rem;text-align: center;line-height: 1rem;}
+
+
+/*css3动画*/
+/*进度条动画*/
+.box-progress{width: 1.5rem;height: 0.2rem;background-color: #ccc;position: absolute;bottom: 5rem;left: 50%;transform: translate(-50%,-50%);overflow: hidden;display: block;z-index: 10;}
+	.pro-anim.original{animation-fill-mode: none;}
+	.pro-anim{width: 1.5rem;height: 0.2rem;background-color: #98d784;transform: translateX(0rem);}
+	.proAnim{animation:progress 5s linear forwards;}
+	@keyframes progress{
+		0%{transform: translateX(0rem);}
+		100%{transform: translateX(-1.5rem);}
+	}
+/* 倒计时动画 */
+@keyframes upHide{
+	0%{opacity: 1;transform:translate(-50%,-50%) scale(1,1);}
+	100%{opacity: 0;transform:translate(-50%,-50%) scale(1.4,1.4);}
+}
+.upHide1.on{animation:upHide .2s ease 0.5s forwards;}
+.upHide2.on{animation:upHide .2s ease 1.5s forwards;}
+.upHide3.on{animation:upHide .2s ease 2.5s forwards;}
+.upHide4.on{animation:upHide .2s ease 3.5s forwards;}
+.upHide1{z-index: 7;}
+.upHide2{z-index: 6;}
+.upHide3{z-index: 4;}
+.upHide4{z-index: 3;}
+/* 
+	点球视角动画
+	one-leftAni 左边入界球 
+	one-middleAnim 中间入界球 
+	one-rightAnim 右边入界球
+	one-leftAnimDoor 左边守门
+	one-middleAnimDoor 中间守门
+	one-rightAnimDoor 右边守门
+*/
+/* 足球归位 */
+.box.original{animation-fill-mode: none;}
+.one-leftAnim{animation:oneleftanim .4s ease .5s forwards;}
+.one-middleAnim{animation:onemiddleanim .4s ease .5s forwards;}
+.one-rightAnim{animation:onerightanim .4s ease .5s forwards;}
+.one-leftAnimDoor{animation:oneleftdoor 0s ease .8s forwards;}
+.one-middleAnimDoor{animation:onemiddledoor 0s ease .8s forwards;}
+.one-rightAnimDoor{animation:onerightdoor 0s ease .8s forwards;}
+@keyframes oneleftanim{
+	0%{transform: translate(0rem,0rem) scale(1,1) rotate(0deg);}
+	100%{transform: translate(-1.7rem,-7rem) scale(0.8,0.8) rotate(360deg);}
+}
+@keyframes onemiddleanim{
+	0%{transform: translate(0rem,0rem) scale(1,1) rotate(0deg);}
+	100%{transform: translate(0rem,-7rem) scale(0.8,0.8) rotate(360deg);}
+}
+
+@keyframes onerightanim{
+	0%{transform: translate(0rem,0rem) scale(1,1) rotate(0deg);}
+	100%{transform: translate(1.7rem,-7rem) scale(0.8,0.8) rotate(360deg);}
+}
+@keyframes oneleftdoor{
+	0%{left: 0;}
+	100%{left: 0;}
+}
+@keyframes onemiddledoor{
+	0%{left: 0;}
+	100%{left: 1.67rem;}
+}
+@keyframes onerightdoor{
+	0%{left: 0;}
+	100%{left: 3.34rem;}
+}
+/* 
+	守球视角动画
+	two-leftAnim 左边入界球 
+	two-middleAnim 中间入界球 
+	two-rightAnim 右边入界球
+	two-leftAnimDoor 左边守门
+	two-middleAnimDoor 中间守门
+	two-rightAnimDoor 右边守门
+*/
+/* 足球归位 */
+.box.original{animation-fill-mode: none;}
+.two-leftAnim{animation:twoleftanim .4s ease .5s forwards;}
+.two-middleAnim{animation:twomiddleanim .4s ease .5s forwards;}
+.two-rightAnim{animation:tworightanim .4s ease .5s forwards;}
+.two-leftAnimDoor{animation:twoleftdoor 0s ease .8s forwards;}
+.two-middleAnimDoor{animation:twomiddledoor 0s ease .8s forwards;}
+.two-rightAnimDoor{animation:tworightdoor 0s ease .8s forwards;}
+@keyframes twoleftanim{
+	0%{transform: translate(0rem,0rem) scale(1,1) rotate(0deg);}
+	100%{transform: translate(-1.7rem,6.5rem) scale(0.8,0.8) rotate(360deg);}
+}
+@keyframes twomiddleanim{
+	0%{transform: translate(0rem,0rem) scale(1,1) rotate(0deg);}
+	100%{transform: translate(0rem,6.5rem) scale(0.8,0.8) rotate(360deg);}
+}
+
+@keyframes tworightanim{
+	0%{transform: translate(0rem,0rem) scale(1,1) rotate(0deg);}
+	100%{transform: translate(1.7rem,6.5rem) scale(0.8,0.8) rotate(360deg);}
+}
+@keyframes twoleftdoor{
+	0%{left: 0;}
+	100%{left: 0;}
+}
+@keyframes twomiddledoor{
+	0%{left: 0;}
+	100%{left: 1.67rem;}
+}
+@keyframes tworightdoor{
+	0%{left: 0;}
+	100%{left: 3.34rem;}
+}
+	</style>
 </head>
 <body>
-	<audio src="img/shao.mp3" class="shao" id="shao"></audio>
-	<audio src="img/win.mp3" class="win" id="win"></audio>
 	<article class="wrap">
 		<!-- 点球视角 -->
 		<section class="attack on">
@@ -21,7 +175,6 @@
 				<span class="one-guard-person one-guard-person-middle"></span>
 			</section>
 			<section class="one-con">
-				<!-- 球 -->
 				<div class="one-ball"></div>
 			</section>
 			<!-- 点球进球数 -->
@@ -80,9 +233,9 @@
 		$('body').on('touchmove', function (event) {event.preventDefault();});
 		$('body').on('touchend', function (event) {event.preventDefault();});
 		//获取屏幕高度
-		// var h = (document.documentElement.offsetHeight || document.body.offsetHeight) / 100;
-		// $('.wrap').css({'height' : h + 'rem'});
-		// $('.pop-bg').css({'height' : h + 'rem'});
+		var h = (document.documentElement.offsetHeight || document.body.offsetHeight) / 100;
+		$('.wrap').css({'height' : h + 'rem'});
+		$('.pop-bg').css({'height' : h + 'rem'});
 
 		//游戏信息
 		var infos = {
@@ -132,10 +285,6 @@
 			}
 		}
 		//倒计时动画
-		document.addEventListener("WeixinJSBridgeReady", function () { 
-			document.getElementById('shao').playing(); 
-		});
-		// }, false); 			
 		// 开始
 		countDownAnim();
 		function countDownAnim() {
@@ -144,11 +293,6 @@
 			setTimeout(function () {
 				$('.time').removeClass('on');
 				$('.pop-num').removeClass('on');
-				document.getElementById('shao').play();
-		        document.addEventListener("WeixinJSBridgeReady", function () {
-		            document.getElementById('shao').canplay();
-		        }, false);
-
 				if(infos.game_place){
 					countDownAttack();
 				}else{
@@ -191,10 +335,6 @@
 	                	case 1:
 	                		console.log(infos.one_attack_sub,infos.one_guard_sub);
 	                		if(infos.one_attack_sub != infos.one_guard_sub){
-	                			document.getElementById('win').play();
-	                			document.addEventListener("WeixinJSBridgeReady", function () { 
-									document.getElementById('win').play(); 
-								}, false); 
 	                			infos.one_attack_num = infos.one_attack_num + 1;
 	                			infos.one_attack_arr[0] = 1;
 	                			$('.one-balls').eq(0).addClass('on');
@@ -203,10 +343,6 @@
 	                	case 2:
 	                		console.log(infos.one_attack_sub,infos.one_guard_sub);
 	                		if(infos.one_attack_sub != infos.one_guard_sub){
-	                			document.getElementById('win').play();
-	                			document.addEventListener("WeixinJSBridgeReady", function () { 
-									document.getElementById('win').play(); 
-								}, false); 
 	                			infos.one_attack_num = infos.one_attack_num + 1;
 	                			infos.one_attack_arr[0] = 1;
 	                			$('.one-balls').eq(1).addClass('on');
@@ -215,10 +351,6 @@
 	                	case 3:
 	                		console.log(infos.one_attack_sub,infos.one_guard_sub);
 	                		if(infos.one_attack_sub != infos.one_guard_sub){
-	                			document.getElementById('win').play();
-	                			document.addEventListener("WeixinJSBridgeReady", function () { 
-									document.getElementById('win').play(); 
-								}, false); 
 	                			infos.one_attack_num = infos.one_attack_num + 1;
 	                			infos.one_attack_arr[0] = 1;
 	                			$('.one-balls').eq(2).addClass('on');
@@ -227,10 +359,6 @@
 	                	case 4:
 	                		console.log(infos.one_attack_sub,infos.one_guard_sub);
 	                		if(infos.one_attack_sub != infos.one_guard_sub){
-	                			document.getElementById('win').play();
-	                			document.addEventListener("WeixinJSBridgeReady", function () { 
-									document.getElementById('win').play(); 
-								}, false); 
 	                			infos.one_attack_num = infos.one_attack_num + 1;
 	                			infos.one_attack_arr[0] = 1;
 	                			$('.one-balls').eq(3).addClass('on');
@@ -239,10 +367,6 @@
 	                	case 5:
 	                		console.log(infos.one_attack_sub,infos.one_guard_sub);
 	                		if(infos.one_attack_sub != infos.one_guard_sub){
-	                			document.getElementById('win').play();
-	                			document.addEventListener("WeixinJSBridgeReady", function () { 
-									document.getElementById('win').play(); 
-								}, false); 
 	                			infos.one_attack_num = infos.one_attack_num + 1;
 	                			infos.one_attack_arr[0] = 1;
 	                			$('.one-balls').eq(4).addClass('on');
@@ -369,10 +493,6 @@
 	                			infos.two_guard_num = infos.two_guard_num + 1;
 	                			infos.two_guard_arr[0] = 1;
 	                			$('.two-balls').eq(0).addClass('on');
-	                			document.getElementById('win').play();
-	                			document.addEventListener("WeixinJSBridgeReady", function () { 
-									document.getElementById('win').play(); 
-								}, false); 
 	                		}
 	                		break;
 	                	case 2:
@@ -381,10 +501,6 @@
 	                			infos.two_guard_num = infos.two_guard_num + 1;
 	                			infos.two_guard_arr[0] = 1;
 	                			$('.two-balls').eq(1).addClass('on');
-	                			document.getElementById('win').play();
-	                			document.addEventListener("WeixinJSBridgeReady", function () { 
-									document.getElementById('win').play(); 
-								}, false); 
 	                		}
 	                		break;
 	                	case 3:
@@ -393,10 +509,6 @@
 	                			infos.two_guard_num = infos.two_guard_num + 1;
 	                			infos.two_guard_arr[0] = 1;
 	                			$('.two-balls').eq(2).addClass('on');
-	                			document.getElementById('win').play();
-	                			document.addEventListener("WeixinJSBridgeReady", function () { 
-									document.getElementById('win').play(); 
-								}, false); 
 	                		}
 	                		break;
 	                	case 4:
@@ -405,10 +517,6 @@
 	                			infos.two_guard_num = infos.two_guard_num + 1;
 	                			infos.two_guard_arr[0] = 1;
 	                			$('.two-balls').eq(3).addClass('on');
-	                			document.getElementById('win').play();
-	                			document.addEventListener("WeixinJSBridgeReady", function () { 
-									document.getElementById('win').play(); 
-								}, false); 
 	                		}
 	                		break;
 	                	case 5:
@@ -417,10 +525,6 @@
 	                			infos.two_guard_num = infos.two_guard_num + 1;
 	                			infos.two_guard_arr[0] = 1;
 	                			$('.two-balls').eq(4).addClass('on');
-	                			document.getElementById('win').play();
-	                			document.addEventListener("WeixinJSBridgeReady", function () { 
-									document.getElementById('win').play(); 
-								}, false); 
 	                		}
 	                		break;
 	                	default:

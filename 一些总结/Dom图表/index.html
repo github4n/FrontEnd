@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{margin:0;padding:0;}
+		body,html{overflow-x: hidden;}
+		.wrap{
+			height: 264px;
+		    width: 668px;
+		    max-width: calc(100% - 40px);
+    		min-width: 524px;
+		    margin: 100px auto;
+		    font-size: 0;
+		    border-top: 1px solid #E0E2E6;
+		    border-bottom: 1px solid #E0E2E6;
+		    background: linear-gradient(to top, #E0E2E6, #E0E2E6 1px, transparent 1px);
+		    background-size: 100% 50px;
+		    position: relative;
+		    text-align: center;
+		}
+		.wrap::after {
+		    content: '10\A 8\A 6\A 4\A 2 \A 0';
+		    white-space: pre-wrap;
+		    position: absolute;
+		    font-size: 14px;
+		    line-height: 50px;
+		    top: -26px; left: -1.5em;
+		}
+		.result{
+			display: inline-block;
+		    width: calc((100% - 16px * 13) / 12);
+		    height: 100%;
+		    background-color: #eee;
+		    position: relative;
+		}
+		.result::after {
+		    content: attr(data-month)'月';
+		    position: absolute;
+		    bottom: -2em;
+		    left: 0;
+		    right: 0;
+		    text-align: center;
+		    font-size: 12px;
+		    color: gray;
+		}
+		.result + .result{margin-left: 16px;}
+
+		.result-bar {
+		    position: absolute;
+		    width: 100%;
+		    bottom: 0;
+		    left: 0;
+		    background-color: #69a8f7;
+		    transition: height .5s ease-out .5s;
+		}
+		.circle{
+			position: absolute;
+		    width: 6px;
+		    height: 6px;
+		    background-color: #fff;
+		    color: #97cd74;
+		    border: 2px solid;
+		    border-radius: 50%;
+		    top: 10px;
+		    left: 0;
+		    right: 0;
+		    margin: auto;
+		    z-index: 2;
+		}
+		.line{
+			position: absolute;
+		    height: 2px;
+		    background-color: #97cd74;
+		    transform-origin: left center;
+		    left: 50%;
+		    top: 13px;
+		    z-index: 1;
+		    transform: rotate(-30deg)
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="result" data-month = '1'>
+			<span class="result-bar" style="height:80%">
+				<span class="circle"></span>
+				<span class="line" style="width:100px"></span>
+			</span>
+		</div>
+		<div class="result" data-month = '2'>
+			<span class="result-bar" style="height:60%">
+				<span class="circle"></span>
+				<span class="line" style=""></span>
+			</span>
+		</div>
+		<div class="result" data-month = '3'>
+			<span class="result-bar" style="height:40%">
+				<span class="circle"></span>
+				<span class="line" style=""></span>
+			</span>
+		</div>
+		<div class="result" data-month = '4'>
+			<span class="result-bar" style="height:90%">
+				<span class="circle"></span>
+				<span class="line" style=""></span>
+			</span>
+		</div>
+		<div class="result" data-month = '5'>
+			<span class="result-bar" style="height:10%">
+				<span class="circle"></span>
+				<span class="line" style=""></span>
+			</span>
+		</div>
+		<div class="result" data-month = '6'>
+			<span class="result-bar" style="height:50%">
+				<span class="circle"></span>
+				<span class="line" style=""></span>
+			</span>
+		</div>
+		<div class="result" data-month = '7'>
+			<span class="result-bar" style="height:80%">
+				<span class="circle"></span>
+				<span class="line" style=""></span>
+			</span>
+		</div>
+		<div class="result" data-month = '8'>
+			<span class="result-bar" style="height:70%">
+				<span class="circle"></span>
+				<span class="line" style=""></span>
+			</span>
+		</div>
+		<div class="result" data-month = '9'>
+			<span class="result-bar" style="height:60%">
+				<span class="circle"></span>
+				<span class="line" style=""></span>
+			</span>
+		</div>
+		<div class="result" data-month = '10'>
+			<span class="result-bar" style="height:70%">
+				<span class="circle"></span>
+				<span class="line" style=""></span>
+			</span>
+		</div>
+		<div class="result" data-month = '11'>
+			<span class="result-bar" style="height:100%">
+				<span class="circle"></span>
+				<span class="line" style=""></span>
+			</span>
+		</div>
+		<div class="result" data-month = '12'>
+			<span class="result-bar" style="height:30%">
+				<span class="circle"></span>
+				<span class="line" style=""></span>
+			</span>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	var eleCircle = document.querySelectorAll('.circle');
+	var eleLine = document.querySelectorAll('.line');
+    eleCircle.forEach(function(item,index,array) {
+    	var boundThis = array[index].getBoundingClientRect();
+    	if(!array[index+1]){return}
+    	var boundNext = array[index+1].getBoundingClientRect();
+
+		var x1 = boundThis.left;
+		var y1 = boundThis.top;
+		var x2 = boundNext.left;
+		var y2 = boundNext.top;   	
+		console.log(boundThis,boundNext)
+		// 长度
+    	var distance = Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+    	// 角度
+    	var radius = Math.atan((y2 - y1) / (x2 - x1));
+	    eleLine[index].style.width = distance + 'px';
+	    eleLine[index].style.msTransform = 'rotate('+ radius +'rad)';
+	    eleLine[index].style.transform = 'rotate('+ radius +'rad)';
+    })
+</script>
+</html>
