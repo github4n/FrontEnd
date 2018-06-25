@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.wrap{width: 200px;height: 200px;border-radius: 50%;background-color: rgba(0, 0, 0, .4);margin:100px auto;position: relative;}
+			.circle_1{position: absolute;width: 100px;height: 200px;border-radius:100px 0 0 100px;background-color:rgba(0,0,0,1);z-index: 2;top: 0;left: 0;}
+			.circle_2{position: absolute;width: 100px;height: 200px;border-radius:100px 0 0 100px;background-color:rgba(0,0,0,34);z-index: 3;top: 0;left: 0;}
+			.circle_3{position: absolute;width: 100px;height: 200px;border-radius:0 100px 100px 0;background-color:rgba(0,0,0,1);z-index: 4;top: 0;right :0;}
+
+			.anim1{animation: spin 1s linear;}
+			.anim2{animation: second-half-hide 1s linear;}
+			@keyframes spin {
+			  0%   { transform: rotate(360deg); }
+			  100% { transform: rotate(0deg); }
+			}
+			@keyframes second-half-hide {
+			  0%        { opacity: 1; }
+			  50%, 100% { opacity: 0; }
+			}
+			@keyframes second-half-show {
+			  0%        { opacity: 0; }
+			  50%, 100% { opacity: 1; }
+			}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<!-- 3 -->
+		<div class="circle_1 anim1"></div>
+		<!-- 2 -->
+		<div class="circle_2"></div>
+		<!-- 1 -->
+		<div class="circle_3"></div>
+	</div>
+</body>
+</html>
