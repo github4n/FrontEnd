@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{margin:0;padding:0;}
+		.wrap{width: 200px;height: 200px;background-color: #cccccc;border-radius: 50%;position: relative;margin:100px auto;}
+			.circle_1{width: 100px;height: 200px;border-radius: 100px 0 0 100px;background-color: blueviolet;position: absolute;top: 0;left: 0;transform-origin: 100% 50%;transform: rotate(-45deg);z-index: 2;}
+			.circle_2{width: 100px;height: 200px;border-radius: 0 100px 100px 0;background-color: blueviolet;position: absolute;top: 0;right: 0;transform-origin: 0 50%;transform: rotate(0deg);z-index: 4;}
+			.circle_3{width: 100px;height: 200px;border-radius: 100px 0 0 100px;background-color: blueviolet;position: absolute;top: 0;left: 0;z-index: 5;display: none;background-color: #cccccc;}
+	</style>
+</head>
+<body>
+	<div class="wrap">	
+		<div class="circle_1"></div>
+		<div class="circle_2"></div>
+		<div class="circle_3"></div>
+	</div>
+</body>
+<script type="text/javascript">
+
+</script>
+</html>
