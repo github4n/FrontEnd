@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p id="p-id">...</p>
+</body>
+<script type="text/javascript">
+	let p = document.getElementById('p-id');
+	//设置文本
+	p.innerHTML = 'ABC';
+	//设置HTML
+	p.innerHTML = 'ABC<span style="color:red">RED</span>XYZ';
+	//设置文本
+	p.innerText = "console.log(123)";
+	p.textContent = 'ffff'
+</script>
+</html>

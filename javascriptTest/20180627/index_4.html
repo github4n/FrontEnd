@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p id="js">JavaScript</p>
+	<div id="list">
+		<p id="java">java</p>
+		<p id="python">python</p>
+		<p id="scheme">scheme</p>
+	</div>
+<script type="text/javascript">
+	let js = document.getElementById('js'),
+		list = document.getElementById('list'),
+		haskell = document.createElement('p');
+	haskell.id = "haskell";
+	haskell.innerText = 'Haskell';
+	list.appendChild(haskell);
+	list.appendChild(js);
+
+	let lists = list.children;
+	for (let i = 0; i < lists.length; i++) {
+		if(i % 2 === 0){
+			lists[i].style.color = 'red';
+		}
+	}
+	console.log(lists); 
+	let newCode = document.createElement('p');
+	newCode.id = 'list';
+	newCode.innerHTML = '滴滴滴';
+	list.insertBefore(newCode,js);
+</script>
+</body>
+</html>

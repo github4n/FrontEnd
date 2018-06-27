@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app1">
+		<span class="first"></span>
+		<span class="middle"></span>
+		<span class="last"></span>
+	</div>
+	<div id="app2">
+		<span></span>
+		<span></span>
+	</div>
+	<div id="app3">
+		<span class="red"></span>
+		<span clas="'red"></span>
+	</div>
+	<div id="app4">
+		<span class="red">
+			<p></p>
+		</span>
+	</div>
+<script type="text/javascript">
+	console.log('window inner size :' + window.innerWidth + 'X' + window.innerHeight);
+	var app1 = document.getElementById('app1');
+	console.log(app1)
+	var app2 = document.getElementById('app2').getElementsByTagName('span');
+	console.log(app2)
+	var app3 = document.getElementById('app3').getElementsByClassName('red');
+	console.log(app3)
+	var childrens = app1.children;
+	console.log(childrens);
+	var first  = app1.firstElementChild;
+	var last = app1.lastElementChild;
+	console.log(first,last);
+
+	/***********************************/
+
+	var app4 = document.querySelector('#app4');
+	console.log(app4)
+	var app5 = app4.querySelectorAll('span.red > p');
+</script>
+</body>
+</html>

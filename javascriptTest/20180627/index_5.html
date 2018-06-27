@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ol id="test-list">
+        <li class="lang">Scheme</li>
+        <li class="lang">JavaScript</li>
+        <li class="lang">Python</li>
+        <li class="lang">Ruby</li>
+        <li class="lang">Haskell</li>
+    </ol>
+    <button id="reverse">置换</button>
+<script>
+    let list = document.getElementById('test-list').children;
+    let arr = [];
+    for (let i = 0; i < list.length; i++) {
+        arr.push(list[i].innerText);
+    }
+    let new_arr = arr.sort();
+    for (let i = 0; i < list.length; i++) {
+        list[i].innerHTML = new_arr[i];
+    }       
+
+</script>
+</body>
+</html>

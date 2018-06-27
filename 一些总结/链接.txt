@@ -1,3 +1,5 @@
 https://www.xiaohuochai.cc/  前端小站
 https://developer.mozilla.org/zh-CN/  MDN
 http://www.ruanyifeng.com/blog/2016/09/react-technology-stack.html  React 技术栈系列教程
+http://f2ex.cn/15-essential-plugins-for-visual-studio-code/  Visual Studio Code 插件
+https://segmentfault.com/a/1190000006697219   Visual Studio Code 插件
