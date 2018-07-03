@@ -11,7 +11,7 @@ function foo (a,b) {
 	console.log('b=' + b);
 	console.log(rest);
 }
-foo(1,2,3)
+foo(1,2,3);
 
 function foo1 (a,b,...rest) {
 	// body... 

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <label for="email"><input type="text" id="email" name="email" data-flag = 'false'></label>
+        <p id="i-email"></p>
+        <form id="test-form" onsubmit="return checkForm()">
+            <input type="text" name="test">
+            <button type=""></button>
+        </form>
+    </div>
+<script>
+   let oInput1 = document.getElementById('email');
+   let i_email = document.getElementById('i-email');
+   let obj = {};
+    Object.defineProperties(obj,{
+        val1 : {
+            configurable : true,
+            get : function(){
+                oInput1.value = '';
+                return ''
+            },
+            set:function(newValue){
+                i_email.innerHTML = newValue
+            }
+        }
+    });
+    oInput1.addEventListener('keyup',function(){
+        obj.val1 = oInput1.value;
+    },false);
+
+    function checkForm(){
+        var form = document.getElementById('test-form');
+        console.log('success');
+        return true;
+    }
+    // var mon = document.getElementById('monday');
+    // var tue = document.getElementById('tuesday'); 
+    // mon.addEventListener('change',function(e){
+    //     console.log(e);
+    //     console.log(this.checked);
+    // },false);
+    // tue.addEventListener('change',function(e){
+    //     console.log(e);
+    //     console.log(this.checked);
+    // },false);
+    // console.log(mon.checked);
+    // console.log(tue.checked);
+</script>
+</body>
+</html>
