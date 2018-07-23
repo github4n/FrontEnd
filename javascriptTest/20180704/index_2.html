@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    function Person(){
+
+    }
+    var person1 = new Person();
+    Person.prototype = {
+        name : 'Tian',
+        age : 29,
+        job : '前端',
+        sayName : function(){
+            console.log(this.name);
+        }
+    }
+    function Book(){}
+    Book.prototype.name =50
+    var book1 = new Book();
+    book1.name = 10
+    console.log(person1 instanceof Object);
+    console.log(person1 instanceof Person);
+    console.log(person1.constructor == Person);
+    console.log(person1.constructor == Object)
+    console.log(Object.getPrototypeOf(person1))
+    console.log(Person.prototype)
+    console.log(Book.prototype);
+    console.log(book1.name)
+    console.log(Array.prototype)
+    console.log(Array.prototype.sort);
+</script>
+</body>
+</html>

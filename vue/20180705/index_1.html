@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="app1">
+        <span>{{msg}}</span>
+        <span>{{htmls}}</span>
+        <span v-html="htmls"></span>
+        <button v-bind:disabled="isButtonDisabled">确认</button>
+        <span>{{num + 1}}</span>
+        <span>{{flag ? '是' : '否'}}</span>
+        <span>{{message.split(' ').reverse().join('-')}}</span>
+        <p v-if='flag'>显示</p>
+    </div>
+    <div class="app2">
+        <p>{{message}}</p>
+        <p>反转后的字段{{reverseMessage}}</p>
+        <p>{{fullName}}</p>
+        <button @click = "changes">修改</button>
+    </div>
+<script type="text/javascript" src="../vue.js"></script>
+<script>
+    let app1 = new Vue({
+        el : '.app1',
+        data : {
+            msg : '第一次',
+            htmls : '<span style="color:red">this be red<span/>',
+            isButtonDisabled :true,
+            num : 1,
+            flag : true,
+            message : 'hello world'
+        }
+    })
+    let app2 = new Vue({
+        el : '.app2',
+        data :{
+            message : 'Hello',
+            firstName : 'Tou',
+            lastName : 'Wei'
+        },
+        computed :{
+            reverseMessage : function(){
+                return this.message.split('').reverse().join('');
+            },
+            fullName : {
+                get : function(){
+                    return this.firstName + ' ' + this.lastName 
+                },
+                set : function(newValue){
+                    var names = newValue.split('');
+                    this.firstName = names[0];
+                    this.lastName = names[names.length - 1];
+                }
+            }
+        },
+        methods :{
+            changes : function(){
+                return this.fullName = 'TT OO';
+            }
+        }
+    })
+</script>
+</body>
+</html>
